@@ -1,0 +1,20 @@
+klipper:
+  hostName: ${KLIPPER_HOSTNAME:localhost}
+feign:
+  hystrix:
+    enabled: false
+server:
+  port: 8080
+application:
+  version: '@project.version@-${random.int}'
+management:
+  endpoints:
+    enabled-by-default: false
+    web:
+      exposure:
+        include: health, info
+  endpoint:
+    health:
+      enabled: true
+    info:
+      enabled: true
