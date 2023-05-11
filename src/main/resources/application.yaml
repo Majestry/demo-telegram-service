@@ -3,6 +3,9 @@ klipper:
 feign:
   hystrix:
     enabled: false
+spring:
+  application:
+    name: "telegram-service"
 server:
   port: 8080
 application:
@@ -18,3 +21,8 @@ management:
       enabled: true
     info:
       enabled: true
+eureka:
+  client:
+    enabled: false
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

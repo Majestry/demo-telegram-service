@@ -21,6 +21,6 @@ public class CallbackEndpoints {
             produces = "text/plain")
     public String getVersion(@RequestParam(name = "name", defaultValue = "NaN") String name) {
         var responsePayload = "Used version is %s%nResponse from klipper service is %s";
-        return String.format(responsePayload, appVersion, klipperRestClient.getHello(name));
+        return String.format(responsePayload, appVersion, klipperRestClient.getHello("my-custom-header", name));
     }
 }
